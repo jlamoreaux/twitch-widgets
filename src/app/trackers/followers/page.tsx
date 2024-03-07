@@ -1,7 +1,5 @@
-"use client"
-import { kv } from "@vercel/kv";
+"use client";
 import useSWR from "swr";
-import { apiClient as twitchApiClient } from "../../../app/_utils/twitch";
 
 export default function Followers() {
   const fetcher = () => fetch("/api/trackers/followers").then((res) => res.json());
@@ -38,7 +36,7 @@ export default function Followers() {
           className="h-12 bg-canary rounded-full dark:bg-canary"
           style={{ width: `${(followerCount / parseInt(goal)) * 100}%` }}
         >
-          <div className="w-full text-center text-black">{followerCount}</div>
+          <div className="w-full text-center text-black pt-1">{followerCount}</div>
           </div>
       </div>
         {goal}
