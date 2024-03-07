@@ -4,7 +4,7 @@ const { signal } = new AbortController();
 
 export default function Followers() {
   const fetcher = () => fetch("/api/trackers/followers", {signal}).then((res) => res.json());
-  const goalRes = useSWR < { goal: string; current: string }>("/api/trackers/followers", fetcher, { refreshInterval: 5 * 1000 });
+  const goalRes = useSWR < { goal: string; current: string }>("/api/trackers/followers", fetcher, { refreshInterval: 60 * 1000 });
 
   
   if (goalRes.isLoading) {
